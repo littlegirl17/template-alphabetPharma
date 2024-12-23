@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-main-1: #1A51A2;
+    --background-main-2: #3498db;
+    --color-main-1: #1A51A2;
+    --color-main-2: #3498db;
+    --border-radius-5: 5px;
+    --border-radius-10: 10px;
+    --border-radius-15: 15px;
+    --border-radius-20: 20px;
+    --border-radius-50: 50%;
+
+    --font-family: 'Arial', sans-serif;
+}
+
+/*----------------------- START HEADER ------------------------------*/
+
+.header {
+    background-color: var(--background-main-1);
+}
+
+.header_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_top_left {
+    display: flex;
+    align-items: center;
+}
+
+.header_top_bar {
+    font-size: 25px;
+}
+
+.header_top_img {
+    width: 120px;
+    height: 60px;
+}
+
+.header_top_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header_top_right {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.header_top_bell, .header_top_cart {
+    background-color: #fff;
+    color: #ffffff;
+    width: 35px;
+    height: 35px;
+    border-radius: var(--border-radius-50);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.header_search {
+    position: relative;
+    padding: 10px 0 20px 0;
+}
+
+.header_search .header_search_magnifying {
+    position: absolute;
+    left: 15px;
+    top: 42%;
+    transform: translateY(-50%);
+    color: var(--color-main-1);
+    pointer-events: none;
+}
+
+.header_search_input {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 8px 38px;
+    border-radius: var(--border-radius-15);
+}
+
+
+/*----------------------- END HEADER ------------------------------*/
+
+
+/*----------------------- START ------------------------------*/
+
+
+/*----------------------- END  ------------------------------*/
+
+
+/*----------------------- START ------------------------------*/
+
+
+/*----------------------- END  ------------------------------*/
+
+
+/*----------------------- START ------------------------------*/
+
+
+/*----------------------- END  ------------------------------*/
+
+
+/*----------------------- START ------------------------------*/
+
+
+/*----------------------- END  ------------------------------*/
