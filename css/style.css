@@ -116,7 +116,7 @@
     background-color: rgba(0, 0, 0, 0.3);
     display: none;
     animation: fadeIn linear 0.2s;
-    z-index: 1;
+    z-index: 9;
     animation: fadeIn 0.2s linear;
 }
 
@@ -129,7 +129,7 @@
     background-color: #fff;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    z-index: 2;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
@@ -323,6 +323,7 @@
     background-color: #ffffff;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    z-index: 8;
 }
 
 .footer_main {
@@ -414,7 +415,9 @@
 /*----------------------- START CATEGORY------------------------------*/
 
 .category_home {
-    padding-top: 20px;
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 10px 0;
 }
 
 .category_box {
@@ -447,24 +450,33 @@
 
 /*----------------------- START PRODUCT BOX------------------------------*/
 .product_outstanding {
-    padding-top: 20px;
+    margin-top: 10px;
 }
 
 .product_box {
     background-color: #fff;
     position: relative;
     border-radius: var(--border-radius-5);
+
 }
 
 .product_main_image {
-    width: 140px;
+    width: 100%;
     height: 140px;
+    overflow: hidden;
+    padding: 10px 0 0 0;
 }
 
 .product_main_image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 500ms;
+    text-align: center;
+}
+
+.product_box:hover .product_main_image img {
+    transform: scale(1.3);
 }
 
 .product_main_content {
@@ -472,7 +484,7 @@
 }
 
 .product_main_content_height {
-    height: 140px;
+    height: 150px;
 }
 
 .product_main_content span {
@@ -482,6 +494,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 15px;
+    padding-top: 10px;
 }
 
 .product_main_content_btn {
@@ -497,6 +510,26 @@
     font-size: 14px;
     margin-bottom: 5px;
 }
+
+.title_product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title_product h2 {
+    font-size: 20px;
+    padding: 5px 0 0px 0;
+    font-weight: 500;
+}
+
+.title_product span a {
+    text-decoration: none;
+    color: var(--color-main-2);
+    font-size: 14px;
+
+}
+
 
 /*----------------------- END  PRODUCT BOX------------------------------*/
 
@@ -529,7 +562,6 @@
 
 .nav-tabs .nav-item {
     border-bottom: none;
-    /* Loại bỏ border bottom của li */
 }
 
 .tab-content {
@@ -546,13 +578,195 @@
     font-size: 12px;
     font-weight: 500;
     padding-top: 4px;
+    color: var(--color-main-2);
 }
 
 /*----------------------- END  TABS------------------------------*/
 
 
 /*----------------------- START ------------------------------*/
+.modal_product {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%);
+    z-index: 10;
+}
 
+.modal_product.show {
+    display: block;
+    transform: translateY(0);
+}
+
+.modal_product_box {
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal_title {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e8e8e8;
+    width: 100%;
+}
+
+.modal_title .modal_title_two {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.modal_title .modal_title_three {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.modal_product_box_one {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+}
+
+.modal_product_box_image {
+    width: 100px;
+    height: 100px;
+}
+
+.modal_product_box_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.modal_product_box_name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.modal_product_box_price {
+    color: #000000;
+}
+
+.modal_product_box_two {
+    padding-top: 10px;
+}
+
+.modal_product_box_btn {
+    outline: none;
+    border: none;
+    border-radius: var(--border-radius-15);
+    padding: 5px 15px;
+}
+
+.modal_product_box_btn:focus {
+    border: 2px solid #005288;
+    background-color: #fff;
+}
+
+.modal_product_box_three {
+    padding-top: 10px;
+}
+
+.btn_model_box {
+    padding-top: 10px;
+}
+
+.modal_product_box_four {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.modal_product_box_four_price {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
+.modal_product_box_five {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 15px;
+}
+
+.button_model_cart {
+    outline: none;
+    border: none;
+    padding: 10px 10px;
+    border-radius: var(--border-radius-20);
+    width: 100%;
+    background-color: var(--background-main-3);
+    color: var(--color-main-3);
+}
+
+.button_model_buy {
+    outline: none;
+    border: none;
+    padding: 10px 10px;
+    border-radius: var(--border-radius-20);
+    width: 100%;
+    background-color: var(--background-main-1);
+    color: #fff;
+}
+
+.quantity-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.quantity_model {
+    width: 30px;
+    text-align: center;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #333;
+}
+
+.btn_model {
+    width: 30px;
+    height: 30px;
+    background-color: var(--background-main-1);
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn_model:hover {
+    background-color: var(--background-main-1);
+}
+
+.decrease {
+    border-radius: 10px 0 0 10px;
+    /* Cong phía trên */
+}
+
+.increase {
+    border-radius: 0 10px 10px 0;
+    /* Cong phía trên */
+}
 
 /*----------------------- END  ------------------------------*/
 

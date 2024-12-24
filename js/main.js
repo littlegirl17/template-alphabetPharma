@@ -58,3 +58,66 @@ document
       element.innerText = element.innerText.substring(0, maxLength) + "...";
     }
   });
+
+//--------------------------------
+
+document.addEventListener("DOMContentLoaded", () => {
+  let unitPrice = 300000; // Giá mặc định cho "Hộp"
+  let quantity = 1;
+
+  // Cập nhật giá khi chọn đơn vị
+  const unitButtons = document.querySelectorAll(".modal_product_box_btn");
+  unitButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const price = parseInt(button.getAttribute("data-price"));
+      unitPrice = price; // Cập nhật giá đơn vị
+      document.getElementById("product_price").textContent = unitPrice;
+      updateTotalPrice(unitPrice, quantity);
+    });
+  });
+
+  function updateTotalPrice(price, quantity) {
+    const total = price * quantity;
+    document.getElementById("total_price").textContent = total;
+  }
+
+  const decreaseButton = document.querySelector(".decrease");
+  const increaseButton = document.querySelector(".increase");
+  const quantityInput = document.querySelector(".quantity_model");
+
+  decreaseButton.addEventListener("click", () => {
+    if (quantity > 1) {
+      quantity--;
+      quantityInput.value = quantity;
+      updateTotalPrice(unitPrice, quantity);
+    }
+  });
+
+  increaseButton.addEventListener("click", () => {
+    quantity++;
+    quantityInput.value = quantity;
+    updateTotalPrice(unitPrice, quantity);
+  });
+});
+//--------------------------------
+function showModalProduct() {
+  const modalProduct = document.getElementById("modalProduct");
+  modalProduct.classList.add("show"); // Thêm lớp 'show' để modal hiển thị
+  modalProduct.style.pointerEvents = "auto";
+
+  const closeModal = document.getElementById("close_modal");
+  closeModal.onclick = function () {
+    modalProduct.classList.remove("show");
+    modalProduct.style.pointerEvents = "none";
+  };
+}
+
+window.addEventListener("click", function (event) {
+  const modalProduct = document.getElementById("modalProduct");
+
+  // Kiểm tra xem người dùng có click ra ngoài modal hay không
+  if (event.target === modalProduct) {
+    modalProduct.classList.remove("show"); // Ẩn modal
+    modalProduct.style.pointerEvents = "none"; // Ngừng tương tác khi ẩn modal
+  }
+});
