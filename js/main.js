@@ -43,7 +43,7 @@ const swiperConfig3 = {
   navigation: false, // Tắt prev, next
   pagination: false, // Tắt pagination
   grabCursor: true, // Kéo thả
-  centeredSlides: true, // Căn giữa slide
+  centeredSlides: false, // Căn giữa slide
 };
 
 // Khởi tạo Swiper 3
@@ -121,3 +121,27 @@ window.addEventListener("click", function (event) {
     modalProduct.style.pointerEvents = "none"; // Ngừng tương tác khi ẩn modal
   }
 });
+
+//-------------------------------------------------------------
+// Hàm để tải nội dung của file header.html
+function loadHeader() {
+  fetch("header.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("header").innerHTML = data;
+      //-----------------------------Sau khi header được tải, gắn sự kiện scroll
+      const headerSearch = document.querySelector(".header_fixed");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 90) {
+          headerSearch.classList.add("fixed");
+        } else {
+          headerSearch.classList.remove("fixed");
+        }
+      });
+      //-----------------------------
+    })
+    .catch((error) => console.error("Error loading header:", error));
+}
+
+// Gọi hàm khi trang tải
+loadHeader();
