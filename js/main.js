@@ -59,6 +59,23 @@ document
     }
   });
 
+//---------- Cấu hình cho Swiper 4: chi tiết
+const swiperConfig4 = {
+  loop: false, // Quay lại đầu sau khi hết slide
+  navigation: {
+    nextEl: ".swiper-button-next", // Nút next
+    prevEl: ".swiper-button-prev", // Nút prev
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "none", // Không hiển thị pagination
+  },
+  slidesPerView: 1, // Chỉ hiển thị 1 ảnh mỗi lần
+  spaceBetween: 0, // Không có khoảng cách giữa các ảnh
+  effect: "slide", // Hiệu ứng chuyển slide
+};
+const swiperDetail = new Swiper(".swiper-container-detail", swiperConfig4);
+
 //--------------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
