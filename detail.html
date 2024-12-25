@@ -61,7 +61,7 @@
       <div class="detail_content">
         <div class="container">
           <div class="detail_brand">
-            Thương hiệu: <span>NUTRIMED</span>
+            Thương hiệu: <span>NUTRIMEDK</span>
           </div>
           <div class="detail_title">
             <h2>Sữa rửa mặt Reihaku Hatomugi Acne Care and Facial Acne Care and Facial</h2>
@@ -401,17 +401,94 @@
       </div>
     </div>
   </main>
+
   <!-- END FOOTER INTRODUCE -->
   <!-- START FOOTER -->
   <footer class="footer_detail">
     <div class="container">
       <div class="footer_detail_main">
         <div class="footer_detail_main_image"><img src="img/iconF.png" alt=""></div>
-     <button class="button_detail_cart">Thêm vào giỏ</button>
-          <button class="button_detail_buy">Chọn mua</button>
+          <button class="button_detail_cart" onclick="showModalProduct()"
+          >Thêm vào giỏ</button>
+          <button class="button_detail_buy"onclick="showModalProduct()">Chọn mua</button>
       </div>
     </div>
   </footer>
+
+  <div class="modal_product" id="modalProduct">
+    <div class="modal_title">
+      <span></span>
+      <span class="modal_title_two">Chọn số lượng, đơn vị</span>
+      <span id="close_modal" class="modal_title_three">
+        <i class="fa-solid fa-xmark" style="color: #000000"></i
+      ></span>
+    </div>
+    <div class="container">
+      <div class="modal_product_box">
+        <div class="modal_product_box_one">
+          <div class="modal_product_box_image">
+            <img src="img/pro1.webp" alt="" />
+          </div>
+          <div class="modal_product_box_span">
+            <span class="modal_product_box_name">
+              Sữa rửa mặt Reihaku Hatomugi Acne Care and Facial Washing ngừa
+              mụn, dưỡng ẩm và làm sáng da (130g)
+            </span>
+            <span class="modal_product_box_price" id="product_price"
+              >300000</span
+            >
+          </div>
+        </div>
+        <div class="modal_product_box_two">
+          <span>Đơn vị</span>
+          <div class="btn_model_box">
+            <button
+              type="button"
+              class="modal_product_box_btn"
+              data-unit="box"
+              data-price="300000"
+            >
+              Hộp
+            </button>
+            <button
+              type="button"
+              class="modal_product_box_btn"
+              data-unit="package"
+              data-price="240000"
+            >
+              Gói
+            </button>
+            <button
+              type="button"
+              class="modal_product_box_btn"
+              data-unit="pill"
+              data-price="150000"
+            >
+              Viên
+            </button>
+          </div>
+        </div>
+        <div class="modal_product_box_three">
+          <span>Số lượng</span>
+          <div class="btn_model_box">
+            <button class="btn_model decrease">-</button>
+            <input type="text" class="quantity_model" value="1" readonly />
+            <button class="btn_model increase">+</button>
+          </div>
+        </div>
+        <div class="modal_product_box_four">
+          <span>Tạm tính</span>
+          <span class="modal_product_box_four_price" id="total_price"
+            >10.000đ</span
+          >
+        </div>
+        <div class="modal_product_box_five">
+          <button type="button" class="button_model_cart" >Thêm vào giỏ</button>
+          <button type="button" class="button_model_buy" >Mua ngay</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- END FOOTER -->
 
   <!-- library bootrap 5.3 -->
