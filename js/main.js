@@ -162,3 +162,16 @@ function loadHeader() {
 
 // Gọi hàm khi trang tải
 loadHeader();
+
+//---------------------------------------------------------------------------
+function showCategoryItem(id) {
+  var categoryAll = document.querySelectorAll(".category_right_content_item");
+  categoryAll.forEach((item) => {
+    item.style.display = "none";
+  });
+
+  var categoryItem = document.getElementById(id);
+  if (categoryItem) {
+    categoryItem.style.display = "block";
+  }
+}
