@@ -11,7 +11,7 @@
     --background-main-4: #fcf8f8;
     --background-main-5: #00000048;
 
-    --color-main-1: #1A51A2;
+    --color-main-1: #1250DC;
     --color-main-2: #3498db;
     --color-main-3: #08377c;
 
@@ -333,11 +333,16 @@
 .header_category_footer_btn a {
     text-decoration: none;
     color: var(--color-main-1);
+    font-weight: 500;
+
 }
 
 .header_category_footer span {
     font-size: 12px;
     padding-top: 3px;
+    font-weight: 500;
+    color: var(--color-main-1);
+
 }
 
 /*----------------------- END MENU CATEGORY BAR ------------------------------*/
