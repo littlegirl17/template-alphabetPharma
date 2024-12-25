@@ -160,8 +160,18 @@ function loadHeader() {
     .catch((error) => console.error("Error loading header:", error));
 }
 
+function loadFooter() {
+  fetch("footer.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.getElementById("footer").innerHTML = data;
+    })
+    .catch((error) => console.error("Error loading footer:", error));
+}
+
 // Gọi hàm khi trang tải
 loadHeader();
+loadFooter();
 
 //---------------------------------------------------------------------------
 function showCategoryItem(id) {
