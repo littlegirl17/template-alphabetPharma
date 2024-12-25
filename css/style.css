@@ -349,7 +349,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 70px;
     box-shadow: var(--boxshadow-2);
     background-color: #ffffff;
     border-top-left-radius: 20px;
@@ -361,7 +361,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 4px;
 }
 
 .footer_main_content {
@@ -872,27 +872,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 15px 0 0 0;
 }
 
 .header_detail_top i {
-    font-size: 20px;
+    font-size: 25px;
 }
 
-.header_detail_image {
+.detail_image {
     width: 100%;
     height: 320px;
 }
 
-.header_detail_image img {
+.detail_image img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
+.detail_main {
+    background-color: var(--background-main-4);
+    padding: 0 0 20px 0;
+}
+
 /* Màu sắc dấu tick */
-.header_detail_content {
-    padding-top: 10px;
+.detail_content {
+    padding: 10px 0px 10px 0px;
+    background-color: #ffffff;
 }
 
 .detail_brand span {
@@ -966,6 +972,99 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.detail_information {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 10px 0 10px 0;
+}
+
+.detail_information_title h2 {
+    font-size: 18px;
+}
+
+.detail_information_content h4 {
+    font-size: 15px;
+    margin: 0 0 0px 0;
+}
+
+.detail_information_content span {
+    font-size: 14px;
+}
+
+.detail_information_all {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.detail_information_all a {
+    font-size: 15px;
+    text-decoration: none;
+    color: var(--color-main-1);
+}
+
+.detail_information_all i {
+    padding-left: 8px;
+}
+
+.detail_relate {
+    margin-top: 20px;
+}
+
+.button_detail_cart {
+    outline: none;
+    border: none;
+    height: 45px;
+    border-radius: var(--border-radius-20);
+    width: 100%;
+    background-color: var(--background-main-3);
+    color: var(--color-main-3);
+}
+
+.button_detail_buy {
+    outline: none;
+    border: none;
+    height: 45px;
+    border-radius: var(--border-radius-20);
+    width: 100%;
+    background-color: var(--background-main-1);
+    color: #fff;
+}
+
+.footer_detail {
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    box-shadow: var(--boxshadow-2);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 8;
+}
+
+.footer_detail_main {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+    padding: 14px 0;
+}
+
+.footer_detail_main_image {
+    max-width: 60px;
+    width: 100%;
+    height: 60px;
+    margin-top: -7px;
+}
+
+.footer_detail_main_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 2px;
+    border-radius: var(--border-radius-50);
+
 }
 
 /*----------------------- END  DETAIL------------------------------*/
